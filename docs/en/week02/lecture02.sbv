@@ -1301,7 +1301,7 @@ efficacy or do you think the only reason
 for doing this is because the kind of
 
 0:19:48.900,0:19:55.500
-hardware we that is given to us there
+hardware that is given to us there
 
 0:19:51.360,0:19:59.940
 are is our disposal GPUs and multi-core
@@ -1334,13 +1334,13 @@ properly designed the reason we have to
 do this again is for is because the
 
 0:20:21.780,0:20:27.540
-chips that we have you know in DDR GPUs
+chips that we have you know in Nvidia GPUs
 
 0:20:24.050,0:20:31.440
-are so you know heavily paralyzed but
+are sort of you know heavily paralyzed but
 
 0:20:27.540,0:20:37.400
-they depart lies in a simple way and the
+they paralyze in a simple way and the
 
 0:20:31.440,0:20:37.400
 simplest way to paralyze is to batch yes
@@ -1388,7 +1388,7 @@ compute a hundred times the same
 quantities and average them so gonna
 
 0:21:12.930,0:21:17.490
-spend how many times more computation
+spend a hundred times more computation
 
 0:21:14.970,0:21:19.100
 than necessary well she used to catch
@@ -1415,7 +1415,7 @@ the question is you know what's you know
 how much can you average in a batch
 
 0:21:34.890,0:21:40.410
-without using you know efficiency in the
+without losing you know efficiency and the
 
 0:21:38.820,0:21:41.880
 redundancy and some people have done
@@ -1451,7 +1451,7 @@ have batches up to about two thousand
 and beyond this you start losing
 
 0:22:04.160,0:22:15.360
-conversion speed that means are
+convergence speed that means are
 
 0:22:13.680,0:22:17.670
 completely random basically I mean that
@@ -1475,10 +1475,10 @@ I use the first as a training set and
 the second one the second half as the
 
 0:22:27.390,0:22:32.250
-validation set if there is zero we
+validation set if there is zero redundancy
 
 0:22:29.010,0:22:33.990
-doesn't see in your in your in your set
+in your in your in your set
 
 0:22:32.250,0:22:36.980
 that means my machine is not gonna work
@@ -1496,7 +1496,7 @@ if there is any possibility of
 generalization there has to be some
 
 0:22:43.110,0:22:57.759
-redundancy okay so let's start
+redundancy okay so let's start simple
 
 0:22:56.320,0:23:01.269
 and talk about traditional neural nets
@@ -1508,7 +1508,7 @@ okay traditional neural nets are
 basically interspersed layers of linear
 
 0:23:04.809,0:23:11.259
-operations and point where's nonlinear
+operations and pointwise nonlinear
 
 0:23:06.730,0:23:13.090
 operations so the linear operation you
@@ -1529,7 +1529,7 @@ six inputs with three hidden units in
 the first layer so there's three
 
 0:23:23.320,0:23:28.320
-different sets of ways with which we
+different sets of wights with which we
 
 0:23:25.480,0:23:31.750
 compute weighted sums of the six inputs
@@ -1565,10 +1565,10 @@ this by six dimensional vector you get a
 three dimensional vector okay so that's
 
 0:23:54.730,0:23:57.759
-the first type of operation in a case
+the first type of operation in a classical
 
 0:23:56.200,0:23:59.350
-called neural net and the second type of
+neural net and the second type of
 
 0:23:57.759,0:24:01.389
 operation is that you take all the
@@ -1583,7 +1583,7 @@ weighted sums and you pass them through
 simple nonlinearities in this case this
 
 0:24:05.559,0:24:11.500
-is called a value it's called a half
+is called a RELU it's called a half
 
 0:24:07.240,0:24:12.789
 wave rectification in engineering you
