@@ -1148,7 +1148,7 @@ this actor critic Adventures actor
 critic etc okay right so what you have
 
 0:17:21.110,0:17:28.670
-to know how to do is compute the
+to do is compute the
 
 0:17:23.410,0:17:30.080
 gradient of your per sample you of your
@@ -1160,7 +1160,7 @@ objective function with respect to the
 parameters in practice we'll use the
 
 0:17:32.690,0:17:38.720
-caste gradient as you probably aware so
+stochastic gradient as you probably aware so
 
 0:17:36.110,0:17:40.250
 instead of computing the gradient of the
@@ -1196,7 +1196,7 @@ some step size times the gradient of the
 per sample loss function with respect to
 
 0:18:07.820,0:18:12.970
-the parameter for a given sample XP YP
+the parameter for a given sample X[P] Y[P]
 
 0:18:13.840,0:18:32.960
 yep yep okay so in practice people use
@@ -1244,7 +1244,7 @@ gradient optimization but it's
 stochastic so it's very noisy every
 
 0:18:59.390,0:19:02.250
-sample you get is going to
+sample you get is going to pull
 
 0:19:00.690,0:19:03.990
 in a different direction it's just the
