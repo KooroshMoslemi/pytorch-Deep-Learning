@@ -2,10 +2,10 @@
 I guess we can get started alright so
 
 0:00:03.659,0:00:07.379
-today we're going to talk about back
+today we're going to talk about backprop
 
 0:00:04.740,0:00:08.849
-prop and I'm sure for some of you a lot
+and I'm sure for some of you a lot
 
 0:00:07.379,0:00:11.790
 of this is gonna look familiar
@@ -14,22 +14,22 @@ of this is gonna look familiar
 I'm going to start with some sort of
 
 0:00:11.790,0:00:17.460
-ring pressure is about busy concepts and
+refreshers about busy concepts and
 
 0:00:14.719,0:00:20.640
-in talked about sort of a more general
+talke about sort of a more general
 
 0:00:17.460,0:00:25.560
-formulation of back prop a little later
+formulation of backprop a little later
 
 0:00:20.640,0:00:27.930
 and then tomorrow alfredo will go
 
 0:00:25.560,0:00:29.099
-through like how you use Otto grad and
+through like how you use autograd and
 
 0:00:27.930,0:00:33.840
-things like this in PI torch
+things like this in Pytorch
 
 0:00:29.099,0:00:35.910
 okay so basic concepts we have
@@ -74,10 +74,10 @@ are different for every training samples
 so in things like in most deep learning
 
 0:01:09.540,0:01:14.070
-for Mark's the parameter is actually
+frameworks the parameter is actually
 
 0:01:11.520,0:01:15.540
-implicit to the to the parameterize
+implicit to the to the parameterized
 
 0:01:14.070,0:01:17.430
 function when you call the function you
@@ -95,7 +95,7 @@ least in the object-oriented versions of
 models but just need to remember that
 
 0:01:28.860,0:01:32.130
-you know you have primary trans model is
+you know you have parameterized model is
 
 0:01:30.600,0:01:34.200
 just a prioritized function it takes an
@@ -122,10 +122,10 @@ called C the prediction the output of
 the module is called Y bar and the C
 
 0:01:49.649,0:01:53.970
-function compared Y in Y bar where why
+function compared Y in Y bar where Y
 
 0:01:51.720,0:02:00.090
-is he at what you want Y bar is he I put
+is he at what you want Y bar is
 
 0:01:53.970,0:02:02.189
 the output you get so I'm giving here
@@ -146,7 +146,7 @@ a linear model just computes a weighted
 sum of the components of its input
 
 0:02:09.810,0:02:13.540
-vector multiply
+vector multiplied
 
 0:02:10.720,0:02:15.610
 by weights and if you do linear
@@ -158,7 +158,7 @@ regression with queloz
 the the C function is just the squared
 
 0:02:19.060,0:02:25.240
-distance you create a distance between
+distance euclidean distance between
 
 0:02:20.500,0:02:28.060
 the Y vector and the Y bar vector when y
@@ -248,22 +248,22 @@ complicated way of explaining nearest
 neighbor is that the the type of
 
 0:03:54.280,0:03:57.220
-competition that takes place in your
+computation that takes place in your
 
 0:03:55.810,0:03:58.600
-parametrize model could be very
+parametrized model could be very
 
 0:03:57.220,0:04:00.519
 complicated it doesn't have to be just
 
 0:03:58.600,0:04:02.250
-like a neuron that something that you
+like a neuron net something that you
 
 0:04:00.519,0:04:04.420
 compute with weighted sums and and
 
 0:04:02.250,0:04:06.370
-anomaly era T's it can be something
+nonlinearities it can be something
 
 0:04:04.420,0:04:07.000
 complicated and involves a minimization
@@ -272,7 +272,7 @@ complicated and involves a minimization
 of something else
 
 0:04:07.000,0:04:11.920
-I mean what could be the minima with
+I mean what could be the minimum of
 
 0:04:09.070,0:04:14.820
 some function okay and we'll come back
@@ -296,13 +296,13 @@ multiplied by let's say the Z vector and
 the Z vector would be constrained to be
 
 0:04:37.419,0:04:43.599
-a a one hut and in which case we would
+a a one-hot and in which case we would
 
 0:04:41.020,0:04:46.690
 select a column of W and you could do a
 
 0:04:43.599,0:04:47.949
-mean over this is a vector okay then it
+mean over the Z vector okay then it
 
 0:04:46.690,0:04:49.840
 would be a different notation but kind
@@ -485,7 +485,7 @@ models this this is a similar notation
 that is used in what's called factor
 
 0:07:19.810,0:07:24.940
-graphs where the squares where factors
+graphs where the squares are factors
 
 0:07:23.190,0:07:26.140
 factor graphs don't have those
@@ -509,10 +509,10 @@ loss functions so loss functions are
 things that we minimize during training
 
 0:07:42.430,0:07:50.320
-and these two types of rust is the per
+and there is two types of loss is the per-sample
 
 0:07:45.940,0:07:53.380
-sample loss so in this case L of X Y W
+loss so in this case L(x,y,w)
 
 0:07:50.320,0:07:55.570
 so you give it a sample a pair x and y
@@ -530,7 +530,7 @@ all case here we use a very simple loss
 which is just equal to the cost module
 
 0:08:01.870,0:08:05.410
-the output of the customer you Allah
+the output of cost module
 
 0:08:03.310,0:08:07.330
 will put on top over system this is kind
@@ -554,16 +554,16 @@ cost function that we we put in it's not
 always the case and then the loss that
 
 0:08:23.410,0:08:26.830
-we actually minimize to retraining is
+we actually minimize during training is
 
 0:08:25.090,0:08:30.430
 the average loss over a training set so
 
 0:08:26.830,0:08:34.659
-training set s is a set of pairs X Y P Y
+training set s is a set of pairs (x[p],y[p])
 
 0:08:30.430,0:08:36.940
-of P for P equals 0 to P minus 1 and the
+for P=0 to P-1 and the
 
 0:08:34.659,0:08:38.469
 overall loss which depends of course on
@@ -575,13 +575,13 @@ the training set and the parameter
 values is the
 
 0:08:40.240,0:08:44.669
-average of the per sample loss overall
+average of the per sample loss over all
 
 0:08:42.219,0:08:44.669
 the samples
 
 0:08:49.529,0:09:00.509
-and I forgot to say in the first son
+and I forgot to say in the first sum
 
 0:08:53.009,0:09:02.249
 here it's X Y belongs to s so machine
@@ -602,7 +602,7 @@ occasionally finding Nash equilibria
 between two functions as in the case of
 
 0:09:11.759,0:09:17.459
-Ganz but most of the time we minimize
+Gans but most of the time we minimize
 
 0:09:13.170,0:09:19.680
 functions and we do this with gradient
@@ -650,7 +650,7 @@ run into trouble but it can have kinks
 in it as long as they're not too nasty
 
 0:09:51.170,0:09:58.259
-and grainy descent of course as you
+and gradient descent of course as you
 
 0:09:54.300,0:09:59.790
 probably know consists in computing the
@@ -683,10 +683,10 @@ always orthogonal to the lines of equal
 cost okay
 
 0:10:24.059,0:10:33.569
-equal altitude if you want okay so when
+equal altitude if you want okay so
 
 0:10:28.079,0:10:35.519
-in this set is like you know being in
+gradient descent is like you know being in
 
 0:10:33.569,0:10:37.230
 the mountain in the fog and it's night
@@ -707,10 +707,10 @@ direction of steepest descent and you
 take a step okay so the algorithm here
 
 0:10:45.149,0:10:50.339
-at the top the division vector which is
+at the top the W vector which is
 
 0:10:47.399,0:10:52.829
-your position is replaced by the double
+your position is replaced by
 
 0:10:50.339,0:10:55.139
 your current W vector minus some
@@ -722,16 +722,16 @@ constant times the gradient vector and
 the gradient vector points up so when
 
 0:10:56.699,0:11:02.910
-you do - you're kind of walking downhill
+you do minus you're kind of walking downhill
 
 0:11:00.230,0:11:06.360
 in the direction of steepest descent
 
 0:11:02.910,0:11:09.330
-now this is if ADA is a scalar constant
+now this is if η is a scalar constant
 
 0:11:06.360,0:11:13.350
-but in sophisticated algorithms that can
+but in sophisticated algorithms η can
 
 0:11:09.330,0:11:15.270
 actually be a matrix so if it's a matrix
@@ -764,13 +764,13 @@ top where the the value is a little Ella
 gated the gradient actually does not
 
 0:11:34.200,0:11:39.360
-point towards the minimum it point
+point towards the minimum it points
 
 0:11:35.640,0:11:40.920
-started you know off off center and so
+you know off center and so
 
 0:11:39.360,0:11:42.030
-it should go directly to the minimum you
+if you go directly to the minimum you
 
 0:11:40.920,0:11:43.200
 don't want to follow the gradient you
@@ -779,7 +779,7 @@ don't want to follow the gradient you
 want to be a little smarter than this
 
 0:11:43.200,0:11:49.950
-and by using sort of idea that all
+and by using sort of η
 
 0:11:47.490,0:11:52.950
 matrices you can actually you could in
@@ -881,7 +881,7 @@ most of reinforcement learning actually
 uses
 
 0:13:13.709,0:13:18.899
-great at estimation without the gradient
+gradient estimation without the gradient
 
 0:13:16.410,0:13:23.790
 what you want is I don't know you want
@@ -929,10 +929,10 @@ the output that goes into the
 environment is differentiable okay so
 
 0:13:57.389,0:14:02.130
-from that point on that's that's great
+from that point on that's gradient based
 
 0:13:59.970,0:14:02.610
-in this only the cost is not
+only the cost is not
 
 0:14:02.130,0:14:05.910
 differentiable
@@ -1034,7 +1034,7 @@ good it is doing without turning it the
 correct answer and it doesn't have
 
 0:15:25.550,0:15:30.829
-access to acquit yeah
+access to gradient yeah
 
 0:15:28.180,0:15:34.129
 okay so what that tells you is that RL
@@ -1049,7 +1049,7 @@ you don't have a gradient so you have to
 try you know if the if the output Y bar
 
 0:15:41.120,0:15:46.550
-is row dimensional then you know it's
+is low dimensional then you know it's
 
 0:15:43.339,0:15:48.920
 okay right you can you can try to make
@@ -1076,7 +1076,7 @@ for it unless you try lots and lots of
 different times right so that's a huge
 
 0:16:06.740,0:16:12.439
-problem with RL and I would take weeks
+problem with RL and I would take this
 
 0:16:10.370,0:16:14.839
 in RL actually I'm not gonna talk about
@@ -1136,10 +1136,10 @@ differentiable or at least approximating
 it by a differentiable function and that
 
 0:16:59.870,0:17:08.690
-you can just use back pop so the you
+you can just use backprop so the you
 
 0:17:02.600,0:17:11.839
-know AC a AC and a AAA C are versions of
+know AC A2C and A3C are versions of
 
 0:17:08.690,0:17:21.110
 this actor critic Adventures actor
