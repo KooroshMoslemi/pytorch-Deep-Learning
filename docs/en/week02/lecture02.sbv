@@ -1673,7 +1673,7 @@ single matrix that is the product of the
 two matrices okay so here it is a little
 
 0:25:29.670,0:25:42.080
-more detail the sum of unit I is so s I
+more detail the sum of unit I is so s[i]
 
 0:25:38.340,0:25:45.210
 which is a weighted sum for unit I is is
@@ -1688,10 +1688,10 @@ which is denoted up of I okay so the J
 index goes over all the predecessors of
 
 0:25:51.870,0:25:57.750
-I of W IJ x zj where Z J is the output
+I of W[i,j].z[j] where z[j] is the output
 
 0:25:55.490,0:26:00.360
-the J side pull from the previous layer
+the j-th output from the previous layer
 
 0:25:57.750,0:26:05.490
 this is a sort of stack you know kind of
@@ -1700,16 +1700,16 @@ this is a sort of stack you know kind of
 regular layered neural net and then you
 
 0:26:05.490,0:26:10.020
-take a particular si and you pass it
+take a particular s[i] and you pass it
 
 0:26:08.250,0:26:14.240
 through one of those nonlinear functions
 
 0:26:10.020,0:26:14.240
-F and you get Zi
+F and you get z[i]
 
 0:26:21.110,0:26:25.400
-talk about early computer gradients and
+talk about computing gradients and
 
 0:26:24.680,0:26:28.310
 things like this
@@ -1754,10 +1754,10 @@ fact you don't need to make this
 assumption the only assumption you need
 
 0:26:58.130,0:27:01.190
-to make is that you have some primary
+to make is that you have some prametrized
 
 0:26:59.510,0:27:02.240
-choice function that produces a scalar
+function that produces a scalar
 
 0:27:01.190,0:27:07.760
 on the output that's it
@@ -1811,13 +1811,13 @@ from kindergarten okay high school okay
 college if you have two functions that
 
 0:27:52.430,0:27:58.310
-fill each other your G of H of s and you
+fill each other your g(h(s)) and you
 
 0:27:55.430,0:28:02.060
-want to differentiate it so G of H of s
+want to differentiate it so g(h(s))'
 
 0:27:58.310,0:28:04.100
-prime is equal to the derivative of G at
+is equal to the derivative of G at
 
 0:28:02.060,0:28:08.110
 point H of s multiplied by the
@@ -1841,13 +1841,13 @@ this the way Newton wrote it or earlier
 or whatever with the infinitesimal
 
 0:28:26.289,0:28:31.950
-quantities so you can write D C over D s
+quantities so you can write dc/ds
 
 0:28:29.350,0:28:35.230
-which means the derivative at 0 s by 2 s
+which means the derivative of c with respect to s
 
 0:28:31.950,0:28:37.780
-is equal to D C over DZ times DZ over
+is equal to dc over dz times dz over
 
 0:28:35.230,0:28:40.390
 the s ok so it's the derivative of C
@@ -1865,16 +1865,16 @@ the nice the nice reason for writing it
 like this is that it's obvious you can
 
 0:28:46.750,0:28:52.330
-simplify by DZ right you have dizzy at
+simplify by dz right you have dz at
 
 0:28:48.760,0:28:54.100
 the bottom and at the top and so by
 
 0:28:52.330,0:28:57.970
-simplifying by DZ this is the second
+simplifying by dz this is the second
 
 0:28:54.100,0:29:01.000
-line you get DC over the s ok so you
+line you get dc/ds ok so you
 
 0:28:57.970,0:29:02.409
 kind of split the derivative by having
@@ -1889,7 +1889,7 @@ put at the bottom and at the top right
 it's very simple manipulation simple
 
 0:29:06.370,0:29:12.429
-equally palacios now DZ over D s is just
+manipulation now dz over ds is just
 
 0:29:09.880,0:29:14.919
 the derivative of Z with respect to s
@@ -1898,10 +1898,10 @@ the derivative of Z with respect to s
 with Z is equal to H of s so that's just
 
 0:29:14.919,0:29:24.669
-H prime of s ok so D Co VDS is equal to
+H prime of s ok so dc/ds is equal to
 
 0:29:20.440,0:29:27.010
-DT over D G times H prime of s so if if
+dc/dz times h'(s) so if if
 
 0:29:24.669,0:29:32.230
 someone gives you the derivative of the
@@ -2000,7 +2000,7 @@ imagine that you are you know twiddling
 s by little okay we're going to we're
 
 0:30:49.960,0:30:57.160
-going to perturb s by Diaz
+going to perturb s by ds
 
 0:30:53.400,0:31:00.880
 so as we go through h h as a stroke
@@ -2009,19 +2009,19 @@ so as we go through h h as a stroke
 which is s prime of s so Z is going to
 
 0:31:00.880,0:31:05.850
-be perturbed by D s times that
+be perturbed by ds times that
 
 0:31:03.580,0:31:10.560
-derivative right D s times H prime of s
+derivative right ds times H prime of s
 
 0:31:05.850,0:31:14.020
 okay this is what is being written here
 
 0:31:10.560,0:31:19.060
-for tubing s by D s were perturb Z by DZ
+perturbing s by ds were perturb Z by dz
 
 0:31:14.020,0:31:22.810
-equal D s times H prime of s this will
+equal ds times H prime of s this will
 
 0:31:19.060,0:31:24.910
 perturb CV by the small perturbation DZ
@@ -2033,22 +2033,22 @@ times the gradient of I mean the
 derivative of C with respect to Z right
 
 0:31:27.220,0:31:34.690
-which is DC or dizzy so basically we get
+which is DC or dz so basically we get
 
 0:31:31.090,0:31:36.610
 that DC equals DZ the perturbation of Z
 
 0:31:34.690,0:31:38.740
-so patch will show C is equal to the
+so perturbation of C is equal to the
 
 0:31:36.610,0:31:41.080
 perturbation with Z DZ times the
 
 0:31:38.740,0:31:45.360
-gradient of other derivative of single
+gradient of other derivative of c
 
 0:31:41.080,0:31:48.190
-spec to Z okay but we've computed this
+with respect to Z okay but we've computed this
 
 0:31:45.360,0:31:52.180
 DZ before we know is the s time H prime
@@ -2060,7 +2060,7 @@ of s so we just substitute in and then
 we pass the s on the other side and we
 
 0:31:56.050,0:32:01.450
-get simply that DT over D is equal to C
+get simply that dc over ds is equal to dc
 
 0:31:59.200,0:32:03.220
 over DZ times H prime of s okay we just
@@ -2069,7 +2069,7 @@ over DZ times H prime of s okay we just
 we derive chain rule okay I've done
 
 0:32:03.220,0:32:06.580
-nothing more than really IV general but
+nothing more than deriving chain rule
 
 0:32:05.380,0:32:08.440
 it's a lot more intuitive if you think
@@ -2081,7 +2081,7 @@ of it in terms of you know twitting
 things around and sometimes it's useful
 
 0:32:10.480,0:32:15.180
-when you're writing the backup function
+when you're writing the backprop function
 
 0:32:11.650,0:32:15.180
 for a module to think in those terms
@@ -2099,16 +2099,16 @@ actually write down the equations
 alright now we had two types of modules
 
 0:32:26.380,0:32:30.750
-in orbit you know or you know on that
+in you know or you know that
 
 0:32:28.270,0:32:34.810
 the other one is a linear module okay
 
 0:32:30.750,0:32:35.960
-and for this one I'm gonna again use the
+and for this one I'm gonna again view the
 
 0:32:34.810,0:32:40.190
-internet work as a black
+internet as a blackbox
 
 0:32:35.960,0:32:42.890
 except for just three connections going
@@ -2117,7 +2117,7 @@ except for just three connections going
 from AZ variable to a bunch of s
 
 0:32:42.890,0:32:50.330
-variables okay so an SRO is a weighted
+variables okay so an s is a weighted
 
 0:32:46.760,0:32:53.000
 sum so s 0 for example is going to take
@@ -2126,7 +2126,7 @@ sum so s 0 for example is going to take
 Z the Z at the bottom here by
 
 0:32:53.000,0:32:56.420
-multiplying it but it's only W which I
+multiplying it but it's own W which I
 
 0:32:54.950,0:32:59.530
 call W 0 okay
@@ -2138,7 +2138,7 @@ I draw up all indices that are annoying
 and so then I can ask again the question
 
 0:33:02.540,0:33:15.740
-if I if I twiddle Z by how much will CB
+if I if I twiddle Z by how much will C be
 
 0:33:07.990,0:33:18.080
 twiddled ok so if I twiddle Z s 0 is
@@ -2156,7 +2156,7 @@ so it W 0 is is 2 and I twiddle Z by by
 DZ the output after the weight is going
 
 0:33:29.390,0:33:36.020
-to be twice okay it's gonna be trolled
+to be twice okay it's gonna be twiddled
 
 0:33:32.120,0:33:38.000
 by twice the value but now Z actually
@@ -2171,7 +2171,7 @@ case 3 so it's also going to cause a
 probation for s of 1 and s of to the
 
 0:33:44.180,0:33:50.420
-prohibition for s oh one is going to be
+prohibition for s of one is going to be
 
 0:33:46.360,0:34:00.190
 d ZW 1 and for s of 2 is going to be d
